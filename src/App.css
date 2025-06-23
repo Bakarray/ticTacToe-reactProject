@@ -29,7 +29,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 h1 {
@@ -288,6 +288,13 @@ input[type="radio"] {
 /* Game status styling */
 .game_status {
   margin-bottom: 20px;
+}
+
+.game_status p {
+  margin-top: -10px;
+  color: #ffcc00;
+  padding: 10px;
+  font-size: 2rem;
 }
 
 .game_status button {

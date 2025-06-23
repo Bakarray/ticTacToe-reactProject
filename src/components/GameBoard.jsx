@@ -144,7 +144,7 @@ const GameBoard = ({
     <div className="game_board_container">
       <div className="game_status">
         {gameWinner ? (
-          <p>Winner: {gameWinner}</p>
+          <p>{playerSymbol[gameWinner]} wins!!</p>
         ) : gameDraw ? (
           <p>Game is a Draw!</p>
         ) : (
