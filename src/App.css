@@ -1,0 +1,353 @@
+:root {
+  --bg-color: #03045e;
+  --text-color: #caf0f8;
+  --tile-bg: #023e8a;
+  --tile-text: #000000;
+  --button-bg: #687fe5;
+  --button-hover: #023e8a;
+  --modal-bg: #8ccdeb;
+  --modal-text: #03045e;
+  --shadow-color: #000000;
+  --strike-color: #ff3330;
+}
+
+/* .app.light {
+  background-color: #caf0f8;
+  --text-color: #03045e;
+  --tile-bg: #90e0ef;
+  --tile-text: #03045e;
+  --button-bg: #3498db;
+  --button-hover: #2980b9;
+  --modal-bg: #ade8f4;
+  --modal-text: #03045e;
+  --shadow-color: #666666;
+  --strike-color: #e74c3c;
+} */
+
+body {
+  text-align: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 50px;
+  background: linear-gradient(90deg, var(--tile-bg), #b13bff, var(--tile-bg)) -100%/
+    200%;
+  color: transparent;
+  animation: shimmer 2s linear infinite;
+  background-clip: text;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 100%;
+  }
+}
+
+.theme-toggle {
+  background: var(--button-bg);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  border-radius: 4px;
+  border: none;
+}
+
+.theme-toggle:hover {
+  background: var(--button-hover);
+}
+
+/* * {
+  border: 1px solid red;
+} */
+
+/* MODAL STYLING START */
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a0a59;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--modal-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px var(--modal-text);
+  width: 500px;
+  max-width: 50%;
+  min-width: 250px;
+  position: relative;
+  animation: modal-appear 0.3s ease-out;
+  color: var(--modal-text);
+}
+
+/* Animation */
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Form Elements */
+.modal-content h2 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--modal-text);
+  padding-bottom: 0.5rem;
+}
+
+fieldset {
+  border: 1px solid var(--modal-text);
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin: 1.5rem 0;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+}
+
+label {
+  margin: 1rem 0 0.3rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+select {
+  width: 50%;
+  padding: 0.8rem;
+  border: 1px solid #525252;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+input[type="text"]:disabled {
+  background-color: #696969;
+  color: #9b9999;
+}
+
+button[type="submit"] {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: var(--button-hover);
+}
+
+/* Radio Buttons */
+fieldset > div {
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* MODAL STYLING END */
+.wave-text p {
+  display: inline-block;
+  margin: 0 1rem;
+  color: #ffcc00;
+  text-shadow: 0 2px 10px #b13bff;
+}
+
+.wave-text span {
+  font-weight: 700;
+  margin: 15px 0;
+  text-shadow: 1px 1px 3px var(--shadow-color);
+  display: inline-block;
+  color: #b13bff;
+  padding: 5px;
+  font-size: 2.5rem;
+  animation: wave 2s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.wave-text span.current {
+  background-color: #201370;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px var(--shadow-color);
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.game_board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 60px);
+  margin: 0 auto;
+  width: min(90vw, 200px);
+  border-radius: 15px;
+  gap: 10px;
+  position: relative;
+}
+
+.board_tile {
+  border-radius: 15px;
+  box-shadow: 0.5px 0.5px 2px var(--shadow-color);
+  background-color: var(--tile-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: x-large;
+  color: #ffcc00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.board_tile.last-move {
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Center the game board and status */
+.game_board_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Game status styling */
+.game_status {
+  margin-bottom: 20px;
+}
+
+.game_status button {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.game_status button:hover {
+  background: var(--button-hover);
+}
+
+/* Game win strike through styling */
+.strike {
+  position: absolute;
+  background-color: var(--strike-color);
+  border-radius: 5px;
+  animation: draw 0.75s ease-out forwards;
+}
+
+@keyframes draw {
+  from {
+    transform: scale(0);
+  }
+  to {
+    scale: scale(1);
+  }
+}
+
+.strike[data-type="row"] {
+  width: 100%;
+  height: 5px;
+  left: 0;
+  top: calc((60px + 10px) * var(--index) + 27.5px);
+}
+
+.strike[data-type="col"] {
+  height: 100%;
+  width: 5px;
+  top: 0;
+  left: calc((60px + 10px) * var(--index) + 27.5px);
+}
+
+.strike[data-type="diag"] {
+  width: 120%;
+  height: 5px;
+  top: 50%;
+  left: -15%;
+  transform: rotate(var(--rotate));
+}
+
+.scores {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.scores p {
+  margin: 5px 0;
+}
