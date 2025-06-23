@@ -216,6 +216,12 @@ input[type="radio"] {
   animation: wave 2s ease-in-out infinite;
 }
 
+@media screen and (max-width: 300px) {
+  .wave-text span {
+    font-size: 1rem;
+  }
+}
+
 .wave-text span:nth-child(1) {
   animation-delay: 0.5s;
 }
