@@ -38,7 +38,6 @@ function App() {
           closeModal={closeModal}
           setIsSinglePlayer={setIsSinglePlayer}
           setDifficulty={setDifficulty}
-          setShowModal={setShowModal}
         />
       )}
 
@@ -59,6 +58,7 @@ function App() {
         difficulty={difficulty}
         playerNames={playerNames}
         updateScores={updateScores}
+        setShowModal={setShowModal}
       />
 
       <div className="scores">
