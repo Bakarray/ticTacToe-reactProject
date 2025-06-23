@@ -19,6 +19,7 @@ const GameBoard = ({
   difficulty,
   playerNames,
   updateScores,
+  setShowModal,
 }) => {
   const [tileContent, setTileContent] = useState(board);
   const [gameWinner, setGameWinner] = useState(null);
@@ -152,6 +153,12 @@ const GameBoard = ({
         )}
         <button onClick={resetGame}>
           {gameWinner || gameDraw ? "Play Again" : "Reset Game"}
+        </button>
+        <button
+          onClick={() => setShowModal(true)}
+          style={{ background: "red" }}
+        >
+          Quit Game
         </button>
       </div>
 

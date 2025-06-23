@@ -305,6 +305,7 @@ input[type="radio"] {
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0 20px;
 }
 
 .game_status button:hover {
@@ -343,7 +344,7 @@ input[type="radio"] {
 }
 
 .strike[data-type="diag"] {
-  width: 120%;
+  width: 130%;
   height: 5px;
   top: 50%;
   left: -15%;

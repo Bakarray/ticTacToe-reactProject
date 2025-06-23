@@ -38,6 +38,7 @@ function App() {
           closeModal={closeModal}
           setIsSinglePlayer={setIsSinglePlayer}
           setDifficulty={setDifficulty}
+          setShowModal={setShowModal}
         />
       )}
 
